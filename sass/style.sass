@@ -1,3 +1,8 @@
+*
+    font-family: 'Lato', sans-serif
+    font-size: 15px
+    line-height: 1.5
+
 /* header */
 
 .header
@@ -7,26 +12,28 @@
     width: 100%
     background-color: #000
     color: #fff
+    z-index: 1
 
 .header-wrapper
     display: flex
     justify-content: space-between
     align-items: center
 
-.menu__item, .search__item
-    position: relative
-    font-size: 15px
-    line-height: 1.5
-    cursor: pointer
-    height: 100%
-    padding: 12px 24px
-
 .menu__list
     display: flex
     align-items: center
 
+.menu__item, .search__item
+    position: relative
+    cursor: pointer
+    height: 100%
+
+.search__item
+    padding: 12px 24px
+
 .menu__link, .menu__link:visited
-    font-family: 'Lato', sans-serif
+    display: inline-block
+    padding: 12px 24px
     text-transform: uppercase
     color: #fff
 
@@ -43,6 +50,7 @@
 .menu__dropdown
     display: none
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%)
+    background-color: #fff
 
 .menu__dropdown-icon
     padding-left: 5px
@@ -53,15 +61,22 @@
     padding: 8px 16px
     text-transform: capitalize
 
+.menu__dropdown-link:hover
+    font-weight: 600
+
 .search__item:hover
     background-color: #F44336
+
+/* main */
 
 .main
     &__wrapper
         max-width: 2000px
         text-align: center
         margin: 0 auto
-        margin-top: 46px
+        margin-top: 45px
+
+/* slider */
 
 .slider
     &-wrapper
@@ -74,10 +89,132 @@
         left: 50%
         transform: translateX(-50%)
         color: #fff
-    &__town
-        font-family: 'Lato', sans-serif
+    &__title
         font-size: 24px
         margin: 20px 0
-    &__info
+    &__subtitle
         font-family: Arial, sans-serif
-        font-size: 15px
+        font-weight: 600
+
+/* container */
+
+.container
+    max-width: 768px
+    margin: 0 auto
+    padding: 0 16px
+
+/* title */
+
+.title
+    font-family: 'Segoe UI', Arial, sans-serif
+    font-size: 30px
+    font-weight: 400
+    text-transform: uppercase
+    letter-spacing: 5px
+    color: #000
+
+/* subtitle */
+
+.subtitle
+    font-style: italic
+    color: #000
+
+/* hover */
+
+.btn--hover
+    &:hover
+        color: #000
+        background-color: #fff
+
+.img--hover
+    &:hover
+        opacity: 0.8
+
+/* band */
+
+.band
+    min-height: 600px
+    padding: 64px 0
+    display: flex
+    align-items: center
+    &__text
+        text-align: left
+        margin-top: 15px
+        margin-bottom: 50px
+
+.band-flex
+    display: flex
+    &__inner
+        flex-basis: 33.3333%
+    &__img
+        width: 150px
+        height: 150px
+        margin-top: 15px
+
+/* tour */
+
+.tour
+    min-height: 850px
+    background-color: #000
+    padding: 64px 0
+    display: flex
+    align-items: center
+    &__title, &__subtitle
+        color: #fff
+    &__tour-list
+        margin-top: 30px
+    &__tickets
+        margin-top: 32px
+
+.tour-list
+    text-align: left
+    background-color: #fff
+    &__item
+        padding: 8px 16px
+        border-bottom: 1px solid #ddd
+        &:last-child
+            border: none
+    &__month
+        color: #757575
+    &__availability
+        display: inline-block
+        height: 100%
+        margin-left: 16px
+        padding: 0 8px
+        color: #fff
+        background-color: #F44336
+    &__notice
+        border-radius: 50%
+        padding: 0 8px
+        float: right
+        margin-right: 16px
+        color: #fff
+        background-color: #000
+
+.tour-tickets
+    display: flex
+    &__inner
+        flex-basis: 33.3333%
+        margin: 0 8px
+        &:first-child
+            margin-left: 0
+        &:last-child
+            margin-right: 0
+    &__wrapper
+        background-color: #fff
+        text-align: left
+        padding: 0 16px
+    &__img
+        width: 100%
+    &__title
+        padding: 15px 0 0 0
+    &__date, &__descr, &__btn
+        margin: 15px 0
+    &__title
+        font-weight: bold
+    &__date
+        opacity: 0.6
+    &__btn
+        padding: 8px 16px
+        color: #fff
+        background-color: #000
