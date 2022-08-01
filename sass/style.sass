@@ -1,3 +1,7 @@
+@mixin input-focus
+    &:focus
+        border: 2px solid #000
+
 *
     font-family: 'Lato', sans-serif
     font-size: 15px
@@ -223,14 +227,28 @@
     &__date
         opacity: 0.6
 
-.ticket-modal
-    display: none
+.overlay
     position: fixed
-    top: 10%
+    top: -100%
+    left: 0
+    z-index: 2
+    min-width: 100vw
+    min-height: 100vh
+    background-color: rgba(0, 0, 0, 0.4)
+    &--active
+        top: 0
+.ticket-modal
+    position: fixed
+    top: -110%
     left: 50%
+    z-index: 2
     transform: translateX(-50%)
     max-width: 900px
     width: 100%
+    padding: 0 15px
+    transition: 1s all
+    &--active
+        top: 10%
     &__header
         min-height: 128px
         background-color: #009688
@@ -238,6 +256,34 @@
         display: flex
         align-items: center
         justify-content: center
+    &__header-btn
+        width: 52px
+        height: 52px
+        position: absolute
+        right: 15px
+        top: 0
+        background-color: rgba(0, 0, 0, 0)
+        &-component
+            display: inline-block
+            width: 100%
+            height: 100%
+            &:after, &::before
+                content: ''
+                position: absolute
+                top: 50%
+                left: 50%
+                display: block
+                width: 20px
+                height: 2px
+                background-color: #fff
+            &::after
+                transform: translate(-50%, -50%) rotate(45deg)
+            &::before
+                transform: translate(-50%, -50%) rotate(-45deg)
+            &:hover
+                background-color: #fff
+                &::before, &::after
+                    background-color: #000
     &__title
         text-transform: capitalize
         color: #fff
@@ -247,7 +293,36 @@
     &__main
         width: 100%
         min-height: 350px
+        text-align: left
+        display: flex
+        flex-direction: column
+        padding: 15px
         background-color: #fff
+    &__input-wrapper
+        margin: 15px 0
+    &__input
+        width: 100%
+        padding: 8px
+        border: 2px solid #ccc
+        @include input-focus
+    &__main-btn
+        width: 100%
+        text-transform: uppercase
+        padding: 16px
+        background-color: #009688
+        color: #fff
+    &__footer
+        min-height: 80px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &-btn
+            padding: 8px 16px
+            background-color: #F44336
+            color: #fff
+        &-link
+            color: blue
+            text-decoration: underline
 
 /* contact */
 
@@ -280,7 +355,7 @@
     &__input
         width: 100%
         padding: 8px
-        border: 1px solid #ccc
+        border: 2px solid #ccc
         &--active
             &:focus
                 border: 2px solid #000
