@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Concert</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -88,7 +88,7 @@
             <section class="tour">
                 <div class="container">
                     <div class="tour__wrapper">
-                        <div class="tour__title title">TOUR DATES</div>
+                        <h2 class="tour__title title">TOUR DATES</h2>
                         <div class="tour__subtitle subtitle">Remember to book your tickets!</div>
                         <ul class="tour-list tour__tour-list">
                             <li class="tour-list__item">
@@ -115,7 +115,7 @@
                                     <div class="tour-tickets__date">Fri 27 Nov 2016</div>
                                     <div class="tour-tickets__descr">Praesent tincidunt sed tellus ut rutrum sed vitae
                                         justo.</div>
-                                    <button class="tour-tickets__btn btn--hover">Buy Tickets</button>
+                                    <button class="tour-tickets__btn btn btn--hover">Buy Tickets</button>
                                 </div>
                             </div>
                             <div class="tour-tickets__inner">
@@ -125,7 +125,7 @@
                                     <div class="tour-tickets__date">Fri 27 Nov 2016</div>
                                     <div class="tour-tickets__descr">Praesent tincidunt sed tellus ut rutrum sed vitae
                                         justo.</div>
-                                    <button class="tour-tickets__btn btn--hover">Buy Tickets</button>
+                                    <button class="tour-tickets__btn btn btn--hover">Buy Tickets</button>
                                 </div>
                             </div>
                             <div class="tour-tickets__inner">
@@ -133,16 +133,92 @@
                                 <div class="tour-tickets__wrapper">
                                     <div class="tour-tickets__title">San Francisco</div>
                                     <div class="tour-tickets__date">Sun 29 Nov 2016</div>
-                                    <div class="tour-tickets__descr">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</div>
-                                    <button class="tour-tickets__btn btn--hover">Buy Tickets</button>
+                                    <div class="tour-tickets__descr">Praesent tincidunt sed tellus ut rutrum sed vitae
+                                        justo.</div>
+                                    <button class="tour-tickets__btn btn btn--hover">Buy Tickets</button>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ticket-modal">
+                    <div class="ticket-modal__header">
+                        <i class="ticket-modal__suitcase fa fa-suitcase"></i>
+                        <h2 class="ticket-modal__title title">Tickets</h2>
+                        <button class="ticket-modal__btn"></button>
+                    </div>
+                    <div class="ticket-modal__main">
+                        <form action="">
+                            <div class="ticket-modal__title-input">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Tickets, $15 per person
+                            </div>
+                            <div class="ticket-modal__input-wrapper">
+                                <input class="ticket-modal__input" type="text" placeholder="How many?">
+                            </div>
+                            <div class="ticket-modal__title-input"><i class="fa-solid fa-user"></i>Send To</div>
+                            <div class="ticket-modal__input-wrapper">
+                                <input class="ticket-modal__input" type="text" placeholder="Enter email">
+                            </div>
+                            <div class="ticket-modal__btn-wrapper">
+                                <button class="ticket-modal__btn btn--hover">Pay</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="contact">
+                <div class="container">
+                    <div class="contact__wrapper">
+                        <h2 class="title">CONTACT</h2>
+                        <div class="subtitle">Fan? Drop a note!</div>
+                        <div class="contact__flex">
+                            <div class="contact__inner">
+                                <div class="contact__icon-wrapper"><i class="fa-solid fa-location-dot"></i><span
+                                        class="contact__location-text">Chicago, US</span></div>
+                                <div class="contact__icon-wrapper"><i class="fa-solid fa-phone"></i><span
+                                        class="contact__phone-text">Phone: +00 151515</span></div>
+                                <div class="contact__icon-wrapper"><i class="fa-solid fa-envelope"></i><span
+                                        class="contact__mail-text">Email: mail@mail.com</span></div>
+                            </div>
+                            <div class="contact__inner">
+                                <form action="#">
+                                    <div class="contact__input-wrapper">
+                                        <div class="contact__input-inner">
+                                            <input class="contact__input contact__input--active" type="text"
+                                                placeholder="Name" required>
+                                        </div>
+                                        <div class="contact__input-inner">
+                                            <input class="contact__input contact__input--active" type="text"
+                                                placeholder="Email" required>
+                                        </div>
+                                        <div class="contact__input-inner">
+                                            <input class="contact__input contact__input--active" type="text"
+                                                placeholder="Message" required>
+                                        </div>
+                                    </div>
+                                    <div class="contact__btn-wrapper">
+                                        <button class="contact__btn btn btn--hover" type="submit">Send</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
+        <section class="map">
+            <img class="map__img" src="img/map.jpg" alt="">
+        </section>
     </main>
+    <footer class="footer">
+        <div class="footer__social-media">
+            <a href="#" class="footer__social-link"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="#" class="footer__social-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer__social-link"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="footer__social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </footer>
 
     <script src="https://kit.fontawesome.com/53d312d23c.js" crossorigin="anonymous"></script>
     <script src="js/slider.js"></script>
