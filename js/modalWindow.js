@@ -1,6 +1,10 @@
 const overlay = document.getElementById('overlay'),
     modalWindow = document.getElementById('modalWindow'),
     tourTickets = document.getElementById('tourTickets');
+
+const crossBtn = document.getElementById('crossBtn'),
+      closeBtn = document.getElementById('closeBtn');
+
 let currBtn;
 
 const check = () => {
@@ -20,6 +24,6 @@ tourTickets.addEventListener('click', e => {
     check()
 });
 
-overlay.addEventListener('click', () => {
-    removeClass();
-})
+overlay.addEventListener('click', removeClass)
+crossBtn.addEventListener('click', removeClass)
+closeBtn.addEventListener('click', removeClass)

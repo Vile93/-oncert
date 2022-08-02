@@ -26,6 +26,9 @@
 .menu__list
     display: flex
     align-items: center
+    @media (max-width: 600px)
+        flex-direction: column
+        align-items: start
 
 .menu__item, .search__item
     position: relative
@@ -46,10 +49,11 @@
     .menu__link
         color: #000
     .menu__dropdown
-        display: block
-        position: absolute
-        left: 0
-        top: 100%
+        @media (min-width: 600px)
+            display: block
+            position: absolute
+            left: 0
+            top: 100%
 
 .menu__dropdown
     display: none
@@ -58,6 +62,9 @@
 
 .menu__dropdown-icon
     padding-left: 5px
+    @media (max-width: 600px)
+        &:before
+            display: none
 
 .menu__dropdown-link
     display: block
@@ -68,8 +75,44 @@
 .menu__dropdown-link:hover
     font-weight: 600
 
+.search
+    @media (max-width: 600px)
+        display: none
+
+.menu__item
+    @media (max-width: 600px)
+        display: none
+        &:first-child
+            display: block
+
 .search__item:hover
     background-color: #F44336
+
+/* hamburger */
+
+.hamburger
+    display: none
+    cursor: pointer
+    align-self: start
+    @media (max-width: 600px)
+        display: block
+    &__list
+        box-sizing: content-box
+        min-height: 22.5px
+        height: 100%
+        padding: 12px 24px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+    &__item
+        width: 12px
+        height: 2px
+        margin: 2px 0
+        background-color: #fff
+    &:hover
+        .hamburger__item
+            background-color: #000
 
 /* main */
 
@@ -96,9 +139,13 @@
     &__title
         font-size: 24px
         margin: 20px 0
+        @media (max-width: 600px)
+            display: none
     &__subtitle
         font-family: Arial, sans-serif
         font-weight: 600
+        @media (max-width: 600px)
+            display: none
 
 /* container */
 
@@ -106,6 +153,8 @@
     max-width: 768px
     margin: 0 auto
     padding: 0 16px
+    @media (max-width: 600px)
+        width: 100%
 
 /* title */
 
@@ -155,12 +204,17 @@
 
 .band-flex
     display: flex
+    @media (max-width: 600px)
+        flex-direction: column
     &__inner
         flex-basis: 33.3333%
     &__img
-        width: 150px
-        height: 150px
+        width: 60%
+        height: auto
         margin-top: 15px
+    &__name
+        @media (max-width: 600px)
+            margin-top: 16px
 
 /* tour */
 
@@ -205,9 +259,14 @@
 
 .tour-tickets
     display: flex
+    @media (max-width: 600px)
+        flex-direction: column
     &__inner
         flex-basis: 33.3333%
         margin: 0 8px
+        @media (max-width: 600px)
+            flex-basis: 100%
+            margin: 16px 0 0 0
         &:first-child
             margin-left: 0
         &:last-child
@@ -229,7 +288,7 @@
 
 .overlay
     position: fixed
-    top: -100%
+    top: -200%
     left: 0
     z-index: 2
     min-width: 100vw
@@ -239,14 +298,14 @@
         top: 0
 .ticket-modal
     position: fixed
-    top: -110%
+    top: -260%
     left: 50%
     z-index: 2
     transform: translateX(-50%)
     max-width: 900px
     width: 100%
     padding: 0 15px
-    transition: 1s all
+    transition: 1s top
     &--active
         top: 10%
     &__header
@@ -332,12 +391,19 @@
     &__flex
         margin-top: 50px
         display: flex
+        @media (max-width: 600px)
+            flex-direction: column
     &__inner
         width: 50%
         flex-basis: 50%
         display: flex
         flex-direction: column
         align-items: flex-start
+        @media (max-width: 600px)
+            flex-basis: 100%
+            width: 100%
+            &:last-child
+                margin-top: 16px
     &__icon-wrapper
         font-size: 18px
         i
@@ -349,6 +415,8 @@
     &__input-inner
         width: 50%
         padding: 0 8px
+        @media (max-width: 600px)
+            width: 100%
         &:last-child
             margin-top: 8px
             width: 100%
