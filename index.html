@@ -16,14 +16,14 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header-wrapper">
-            <div class="menu">
+            <div class="menu" id="menu">
                 <ul class="menu__list">
-                    <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Band</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Tour</a></li>
-                    <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link" data-link="1">Home</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link" data-link="2">Band</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link" data-link="3">Tour</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link" data-link="4">Contact</a></li>
                     <li class="menu__item">
                         <a href="#" class="menu__link">More<i
                                 class="menu__dropdown-icon fa-solid fa-caret-down"></i></a>
@@ -38,12 +38,8 @@
             <div class="search">
                 <div class="search__item"><i class="fa-solid fa-magnifying-glass"></i></div>
             </div>
-            <div class="hamburger btn--hover" id="hamburger">
-                <ul class="hamburger__list">
-                    <li class="hamburger__item"></li>
-                    <li class="hamburger__item"></li>
-                    <li class="hamburger__item"></li>
-                </ul>
+            <div class="hamburger btn--hover">
+                <span class="hamburger__line"></span>
             </div>
         </div>
     </header>
@@ -150,38 +146,40 @@
                 </div>
                 <div class="overlay" id="overlay"></div>
                 <div class="ticket-modal" id="modalWindow">
-                    <div class="ticket-modal__header">
-                        <i class="ticket-modal__suitcase fa fa-suitcase"></i>
-                        <h2 class="ticket-modal__title title">Tickets</h2>
-                        <button class="ticket-modal__header-btn" id="crossBtn">
-                            <span class="ticket-modal__header-btn-component"></span>
-                        </button>
-                    </div>
-                    <div class="ticket-modal__main">
-                        <form action="">
-                            <div class="ticket-modal__title-input">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                Tickets, $15 per person
-                            </div>
-                            <div class="ticket-modal__input-wrapper">
-                                <input class="ticket-modal__input" type="text" placeholder="How many?" required>
-                            </div>
-                            <div class="ticket-modal__title-input"><i class="fa-solid fa-user"></i>Send To</div>
-                            <div class="ticket-modal__input-wrapper">
-                                <input class="ticket-modal__input" type="text" placeholder="Enter email" required>
-                            </div>
-                            <div class="ticket-modal__btn-wrapper">
-                                <button class="ticket-modal__main-btn btn--hover">Pay
-                                    <i class="fa-solid fa-check"></i>
-                                </button>
-                            </div>
-                        </form>
-                        <div class="ticket-modal__footer">
-                            <button class="ticket-modal__footer-btn btn--hover" id="closeBtn">Close 
-                                <i class="fa-solid fa-xmark"></i>
+                    <div class="ticket-modal__wrapper">
+                        <div class="ticket-modal__header">
+                            <i class="ticket-modal__suitcase fa fa-suitcase"></i>
+                            <h2 class="ticket-modal__title title">Tickets</h2>
+                            <button class="ticket-modal__header-btn" id="crossBtn">
+                                <span class="ticket-modal__header-btn-component"></span>
                             </button>
-                            <div class="ticket-modal__support">
-                                Need <a class="ticket-modal__footer-link" href="#">help?</a>
+                        </div>
+                        <div class="ticket-modal__main">
+                            <form action="">
+                                <div class="ticket-modal__title-input">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    Tickets, $15 per person
+                                </div>
+                                <div class="ticket-modal__input-wrapper">
+                                    <input class="ticket-modal__input" type="text" placeholder="How many?" required>
+                                </div>
+                                <div class="ticket-modal__title-input"><i class="fa-solid fa-user"></i>Send To</div>
+                                <div class="ticket-modal__input-wrapper">
+                                    <input class="ticket-modal__input" type="text" placeholder="Enter email" required>
+                                </div>
+                                <div class="ticket-modal__btn-wrapper">
+                                    <button class="ticket-modal__main-btn btn--hover">Pay
+                                        <i class="fa-solid fa-check"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="ticket-modal__footer">
+                                <button class="ticket-modal__footer-btn btn--hover" id="closeBtn">Close
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <div class="ticket-modal__support">
+                                    Need <a class="ticket-modal__footer-link" href="#">help?</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -242,6 +240,7 @@
 
     <script src="https://kit.fontawesome.com/53d312d23c.js" crossorigin="anonymous"></script>
     <script src="js/slider.js"></script>
+    <script src="js/hamburger.js"></script>
     <script src="js/modalWindow.js"></script>
 
 </body>

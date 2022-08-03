@@ -84,6 +84,8 @@
         display: none
         &:first-child
             display: block
+        &--active
+            display: block
 
 .search__item:hover
     background-color: #F44336
@@ -91,28 +93,47 @@
 /* hamburger */
 
 .hamburger
+    position: relative
     display: none
     cursor: pointer
     align-self: start
+    box-sizing: content-box
+    min-height: 22.5px
+    height: 100%
+    padding: 12px 24px
+    flex-direction: column
+    justify-content: center
+    align-items: center
     @media (max-width: 600px)
-        display: block
-    &__list
-        box-sizing: content-box
-        min-height: 22.5px
-        height: 100%
-        padding: 12px 24px
         display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
-    &__item
+    &:hover
+        &::before, &::after, .hamburger__line
+            background-color: #000
+    &::before, &::after
+        content: ''
+        display: flex
+        width: 12px
+        height: 2px
+        background-color: #fff
+        transition: 1s all
+    &__line
         width: 12px
         height: 2px
         margin: 2px 0
         background-color: #fff
-    &:hover
-        .hamburger__item
-            background-color: #000
+    &--active
+        width: 12px
+        height: 100%
+        &::before, &::after
+            position: absolute
+            left: 50%
+            top: 50%
+        .hamburger__line
+            display: none
+        &:before
+            transform: translate(-50%, -50%) rotate(-45deg)
+        &:after
+            transform: translate(-50%, -50%) rotate(45deg)
 
 /* main */
 
@@ -303,7 +324,10 @@
     z-index: 2
     transform: translateX(-50%)
     max-width: 900px
+    max-height: 482.5px
+    height: 100%
     width: 100%
+    overflow-x: auto
     padding: 0 15px
     transition: 1s top
     &--active
@@ -417,6 +441,7 @@
         padding: 0 8px
         @media (max-width: 600px)
             width: 100%
+            margin-top: 8px
         &:last-child
             margin-top: 8px
             width: 100%
