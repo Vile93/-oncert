@@ -7,6 +7,9 @@
     font-size: 15px
     line-height: 1.5
 
+html
+    scroll-behavior: smooth
+
 /* header */
 
 .header
@@ -214,6 +217,7 @@
 /* band */
 
 .band
+    position: relative
     min-height: 600px
     padding: 64px 0
     display: flex
@@ -410,6 +414,7 @@
 /* contact */
 
 .contact
+    position: relative
     min-height: 350px
     padding: 64px 0
     &__flex
@@ -477,3 +482,9 @@
             color: gray
             &:hover
                 opacity: 0.8
+
+.anchor
+    position: absolute
+    left: 0
+    top: 0
+    padding-top: 46.5px

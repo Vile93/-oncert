@@ -1,7 +1,7 @@
 const hamburger = document.querySelector('.hamburger'),
-      menuItem = document.querySelectorAll('.menu__item'),
-      menuLink = document.querySelectorAll('.menu__link'),
-      header = document.getElementById('header');
+    menuItem = document.querySelectorAll('.menu__item'),
+    menuLink = document.querySelectorAll('.menu__link'),
+    header = document.getElementById('header');
 
 let overflow = true;
 
@@ -16,7 +16,7 @@ const bodyOverflow = () => {
 }
 
 const checkClass = () => {
-    if (currClick.classList.contains('menu__link')) {
+    if (currClick.classList.contains('menu__link') && window.innerWidth <= 600) {
         if (!(currClick.dataset.link == 1)) {
             hamburger.classList.toggle('hamburger--active');
             menuItem.forEach((el, ind) => {
@@ -28,11 +28,13 @@ const checkClass = () => {
 }
 
 hamburger.addEventListener('click', e => {
-    hamburger.classList.toggle('hamburger--active');
-    menuItem.forEach((el, ind) => {
-        menuItem[ind].classList.toggle('menu__item--active');
-    });
-    bodyOverflow();
+    if (window.innerWidth <= 600) {
+        hamburger.classList.toggle('hamburger--active');
+        menuItem.forEach((el, ind) => {
+            menuItem[ind].classList.toggle('menu__item--active');
+        });
+        bodyOverflow();
+    }
 })
 
 header.addEventListener('click', e => {
